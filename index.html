@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Member Registration form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="content">
+
+        <form action="post">
+            <div class="row contents" style="margin:auto; margin-top:10%;margin-bottom:8%;">
+                <h1 id="h1">
+                    Member Registration Form
+                </h1>
+                <div class="col-sm-4">
+                    <div class=" form-group py-3">
+
+                        <label style="width: 30%; ">First Name</label>
+                        <input type="text" autocomplete="off" maxlength= "15"class="name form-control-md" placeholder="First Name" style="width: 67%; " required>
+                    </div>
+                    <div class=" form-group py-3">
+                        <label style="width: 30%; ">Last Name</label>
+                        <input type="text" autocomplete="off" maxlength= "15" class="name form-control-md" placeholder="Last Name" style="width: 67%; ">
+                    </div>
+                    <div class="form-group py-3">
+                       
+                        
+                        <div class="row form-group">
+                            <label for="date" class="col-sm-2 col-form-label"style="width: 15%; " >DOB</label>
+                            <div class="col-sm-10">
+                                <div class="input-group date" id="datepicker">
+                                    <input type="text" class="form-control-md" placeholder="Date of birth" style="width: 53%;margin-right:00%;margin-left:20% ; " required>
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white d-block">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="form-group py-3">
+                        <label for="" style="width:30%;">Gender</label>
+                        <select class="gender" name="gender" style="width: 50%; margin-right:17%" required >
+                            <option value="">--Select Gender--</option>
+                            <option value="spouse">Male</option>
+                            <option value="daughter">Female</option>
+                            <option value="son">Others</option>
+                        </select>
+                    </div>
+                    <div class="form-group py-3">
+                        <label for="Address" style="margin-right: 53%;">Address</label>
+                        <textarea name="Address" color="blue"  style="font-weight:bold; border:2px solid black;" autocomplete="off" class="form-control-md" rows="2" cols="42" placeholder="House no, Cross, Area, phase" required></textarea>
+                        <br />
+
+
+
+                        <input type="text" class="inputs autocomplete="off" form-control-sm" maxlength= "15" name="State" placeholder="State" required>
+                        <input type="text" class="inputs autocomplete="off" form-control-sm" maxlength= "15" name="City" placeholder="City" required>
+                        <input type="number" class="inputs autocomplete="off" form-control-sm"  name="Pin" placeholder="Pin" required>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-4" id="photo">
+
+                    <input type="file" class="form-control-md accept=" image/*" onchange="loadFile(event)"  >
+                    <p><img id="output" width="200" height="250" /></p>
+                    <script>
+                        var loadFile = function (event) {
+                            var image = document.getElementById('output');
+                            image.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
+
+
+                </div>
+                <div class="fields col-sm-4">
+                    <div class=" form-group py-3">
+
+                        <label>Email</label>
+                        <input type="email" autocomplete="off" maxlength= "25" class="form-control-md" placeholder="Email">
+                    </div>
+                    <div class=" form-group py-3">
+
+                        <label>Mobile</label>
+                        <input id="telNo"type="tel" autocomplete="off" name="tel" maxlength="10" class="form-control-md" placeholder="Phone Number" required>
+                    </div>
+                    <div class=" form-group py-3">
+
+                        <label>Password</label>
+                        <input type="password" autocomplete="off" maxlength= "15" class="form-control-md" placeholder="*******" required>
+                    </div>
+                    <div class=" form-group py-3">
+
+                        <label>Occupation</label>
+                        <input type="text" autocomplete="off" maxlength= "15" class="form-control-md" placeholder="Occupation">
+                    </div>
+                    <div class=" form-group py-3">
+
+                        <label>PAN</label>
+                        <input type="text" autocomplete="off" maxlength="10" class="form-control-md" placeholder="PAN Number">
+
+                    </div>
+                    <div class=" form-group py-3">
+                        <label>Aadhar</label>
+                        <input type="tel" maxlength="12"autocomplete="off" maxlength="16" class="form-control-l" placeholder="Aadhar No">
+                    </div>
+                    <div class=" form-group py-3">
+                        <label>Referer</label>
+                        <input type="text" autocomplete="off" maxlength="16" class="form-control-l" placeholder="Agent, Referer name">
+                    </div>
+
+                </div>
+                <h3 style="color:white">Nominee Details</h5>
+                <hr style="color: white;" >
+
+                <div class=" form-group py-3">
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="" style="width: 15%; ">Name</label>
+                            <input type="text" autocomplete="off" maxlength= "15" class="form-control-md" name="name" placeholder="Nominee Name"
+                                style=" width: 75%; margin-right:0%; " required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 20%;">Mobile</label>
+                            <input type="tel" maxlength="10" autocomplete="off" class="form-control-md" name="phone " placeholder="Phone Number"
+                                style="width: 50%; margin-right:10%;" required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 25%; ">Relation</label>
+                            <input type="text" autocomplete="off" maxlength= "15" class="form-control-md" name="name" placeholder="Relation"
+                                style=" width: 67%; margin-right:0%;" required>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mt-4 pt-2">
+                    <input class="btn btn-primary btn-lg" type="submit" value="Choose Plot" />
+                </div>
+            </div>
+
+        </form>
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                            }
+                            parent.appendChild(elem);
+                        }
+                    }
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            }
+            else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
+	// ]]>
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                $('#datepicker').datepicker();
+            });
+        </script>
+</body>
+
+</html>
