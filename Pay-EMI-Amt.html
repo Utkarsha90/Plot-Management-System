@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Enquiry User</title>
+    <link rel="stylesheet" href="create-project.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="content">
+
+        <form action="create-project.php" onsubmit="return validateForm()" method="post">
+            <div class="row contents" style="margin:auto; margin-top:0%;margin-bottom:5%;">
+                <h1 id="h1">
+EMIs-Pre Payments					<hr style="color:white;">					
+                </h1>
+                   <div class="row">
+                        <div class="col">
+                            <label for="" style="width: 25%; ">User Mobile</label>
+                            <input type="text" name="user mobile" autocomplete="off" maxlength= "10" class="form-control-md" name="name" placeholder="Enter mobile "
+                                style=" width: 30%; " required>
+	                        <button type="button" class="btn btn-success">Search</button>
+                        </div>
+						<br></br>
+                    </div>
+
+                <h4 style="color:white">Project and Plot details</h5>
+                <hr style="color: white;" >
+
+                    <div class=" form-group py-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="" style="width: 25%; ">PrjID</label>
+                            <input id="pid" name="projid" type="text" autocomplete="off" minlength="5" maxlength="10" class="form-control-md" placeholder="" style="width: 50%;margin-right:5%;margin-left:0% ; "required>
+                    </div>
+                    <div class="col">
+
+                        <label for="" style="width: 45%;">PlotNo</label>
+                        <input id="plotid" name="plotNo" type="text" autocomplete="off" minlength="5" maxlength="10" class="form-control-md" placeholder=""  style="width: 40%; margin-right:10%;"required>						
+                    </div>
+                    <div class="col">
+
+                        <label for="" style="width: 45%; ">PlotSize</label>
+                        <input type="text" name="plotsize" autocomplete="off" maxlength= "6"class="name form-control-md" placeholder=""  style=" width: 40%; margin-right:0%;" required ;>
+                    </div>
+                        </div>
+                    </div>
+			
+                    <div class=" form-group py-3">
+                    </div>
+                <h4 style="color:white">EMI Payment Information</h5>
+                <hr style="color: white;" >
+                <div class=" form-group py-3">
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="" style="width: 25%; ">Amt</label>
+                            <input type="text" name="PPAmt" autocomplete="off" maxlength= "6" class="form-control-md" name="name" placeholder=""
+                                style=" width: 50%; margin-right:0%; " required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 45%;">Chq/DD</label>
+                            <input type="tel" name="ChqDDNo" minlength="10" maxlength="6" pattern="[0-9]+" autocomplete="off" class="form-control-md" name="phone " placeholder=""
+                                style="width: 40%; margin-right:10%;" required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 45%; ">ChQdate</label>
+                            <input type="text" name="Chqdate" autocomplete="off" maxlength= "6" class="form-control-md" name="name" placeholder=""
+                                style=" width: 40%; margin-right:0%;" required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 45%; ">RecptNo</label>
+                            <input type="text" name="Recptno" autocomplete="off" maxlength= "6" class="form-control-md" name="name" placeholder=""
+                                style=" width: 40%; margin-right:0%;" required>
+                        </div>
+						<br></br>
+                    </div>
+
+                </div>
+                <h4 style="color:white">Prepayment Information</h5>
+                <hr style="color: white;" >
+                <div class=" form-group py-3">
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="" style="width: 25%; ">Amt</label>
+                            <input type="text" name="PPAmt" autocomplete="off" maxlength= "6" class="form-control-md" name="name" placeholder=""
+                                style=" width: 50%; margin-right:0%; " required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 45%;">Chq/DD</label>
+                            <input type="tel" name="ChqDDNo" minlength="10" maxlength="6" pattern="[0-9]+" autocomplete="off" class="form-control-md" name="phone " placeholder=""
+                                style="width: 40%; margin-right:10%;" required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 45%; ">ChQdate</label>
+                            <input type="text" name="Chqdate" autocomplete="off" maxlength= "6" class="form-control-md" name="name" placeholder=""
+                                style=" width: 40%; margin-right:0%;" required>
+                        </div>
+                        <div class="col">
+                            <label for="" style="width: 45%; ">RecptNo</label>
+                            <input type="text" name="Recptno" autocomplete="off" maxlength= "6" class="form-control-md" name="name" placeholder=""
+                                style=" width: 40%; margin-right:0%;" required>
+                        </div>
+
+                </div>
+
+                <div class="mt-4 pt-2">
+                    <input class="btn btn-primary btn-lg" type="submit" value="Buy Plot" />
+                </div>
+
+                <div class="col-sm-4">
+
+
+                </div>
+            </div>
+
+        </form>
+        <!-- Code injected by live-server -->
+        <script>
+            // <![CDATA[  <-- For SVG support
+            if ('WebSocket' in window) {
+                (function () {
+                    function refreshCSS() {
+                        var sheets = [].slice.call(document.getElementsByTagName("link"));
+                        var head = document.getElementsByTagName("head")[0];
+                        for (var i = 0; i < sheets.length; ++i) {
+                            var elem = sheets[i];
+                            var parent = elem.parentElement || head;
+                            parent.removeChild(elem);
+                            var rel = elem.rel;
+                            if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                            }
+                            parent.appendChild(elem);
+                        }
+                    }
+                    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                    var address = protocol + window.location.host + window.location.pathname + '/ws';
+                    var socket = new WebSocket(address);
+                    socket.onmessage = function (msg) {
+                        if (msg.data == 'reload') window.location.reload();
+                        else if (msg.data == 'refreshcss') refreshCSS();
+                    };
+                    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                        console.log('Live reload enabled.');
+                        sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                    }
+                })();
+            }
+            else {
+                console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+            }
+	// ]]>
+        </script>
+        <script type="text/javascript">
+            $(function() {
+                $('#datepicker').datepicker();
+            });
+        </script>
+        <script type="text/javascript">
+function ()validateForm(){  
+var usermobile=document.form.mobile.value;  
+  
+if (usermobile.length() < 10){  
+  alert("invalid User mobile ");  
+  return false;  
+        </script>		
+</body>
+
+</html>
