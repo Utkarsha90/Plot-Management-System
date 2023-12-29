@@ -1,0 +1,127 @@
+form{
+  display: grid;
+  text-align: center;
+}
+body{
+  background-image: url(img.jpg);
+  background-repeat:no-repeat;
+    background-position: center;
+    background-size: cover;
+  
+}
+
+#h1{
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow:2px 2px black;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#photo{
+justify-content: left;
+padding: 70px 30px 30px 70px;
+}
+.contents{
+  width: 1100px;
+  margin-left: 20px;
+  display: block;
+  
+  box-shadow:1px 1px 1px 1px ;
+  border-radius: 15px ;
+  padding: 2%;
+  //backdrop-filter: blur(7px);
+background-color: #708090	;
+}
+select{
+  background-color: white;
+  border-radius: 5px;
+  width:150px;
+  color: blue;
+  border: 2px solid black
+}
+.inputs{
+  width: 100px;
+    color: blue;
+  margin-top: 5px;
+  border: 2px solid black;
+}
+input{
+  font-weight: bold;
+  background-color:white;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid black;
+  width:150px;
+}
+.name{
+    width: 40%;
+}
+h5{
+  text-align: center;
+  color:white
+}
+label{
+  font-weight:bold;
+  width:150px;
+  display:inline-block;
+  text-align:left;
+  color : whitesmoke;
+}
+:placeholder-shown{
+  font-weight: bold;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+/* Add plot css */
+.new_p td{
+  width:20%;
+  padding-bottom:1%;
+  color:white;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* Update Plot Details */
+
+.update_p .up_p td{
+ 
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.update_p .up_p th{
+  color:black;
+  font-weight: bold;
+  text-align: center;
+}
+.update_p.up_p input{
+  width:100px;
+}
+
+
+/* Plots By Size */
+.bt:hover{
+  background-color:orange;
+
+}
+
+.bt:focus{
+  background-color: green;
+}
+.bt{
+  border: 2px solid black;
+  border-radius: 10%;
+  width: 70px;
+  height:50px;
+  margin:1%;
+}
