@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+  <link rel="stylesheet" href="login.css">
   <title>Login Page</title>
+  
 </head>
 <body>
+    <div class="row">
+        <div class="column">
+            <a href="login.html"> <img src="logo.png" style="width:110px;"/> </a>
+          <img src="header.jpg" style="width:84%; height:100px;"/>
+            <a href=""><img src="aller.png" style="height:90px;"/></a>
+        </div>
+      </div> 
     <section>
+        
         <div class="form-box">
-            <div class="form-value">
-                <form action="">
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="call-outline"></ion-icon>
-                        <input type="tel" maxlength="10" required>
-                        <label for="">Phone Number</label>
+            <div class="form-value" >
+                <form action="login.php" method = "POST">
+                    <h1 id="h1" style="margin-top: 0%;margin-bottom: 0%; color:gold; text-align: center;">
+Enter Login Info                      
+</h1>
+
+                    <div class="inputbox" >
+                        <input type="tel" name="mobileNo" autocomplete="off" placeholder="Enter Mobile" maxlength="10" required>
                     </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
-                        <label for="">Password</label>
+                    <div class="inputbox" >
+                        <input type="password" name="userPass" autocomplete="off" placeholder="Enter Password" required>
                     </div>
-                    <button>Log in</button>
+                    <button style="background-color:rgb(164, 211, 133);color: blue;">Log in</button>
                     <div class="register">
-                        <label for="" ><a href="#"> Forgot Password</a></label>
+                        <label for="" style="background-color:white; text-align: right; "><a href="forgotPassword.html"> Forgot Password</a></label>
+                        <br><br>
+                        <label for="" style="align-content: right; background-color:white; "><a href="#"></a></label>
                     </div>
+                    <label for="" style="background-color:white; font-size: smaller; text-align: left; ">**Use Firefox, white mode for Best Viewing Experience</label>
                 </form>
             </div>
         </div>
+        
     </section>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+<style>
+    footer {
+      text-align: center;
+      padding: 3px;
+      background-color: rgb(245, 240, 238);
+      color: rgb(87, 21, 241);
+      font-size: larger;
+    }
+    </style>
+<footer>
+    <label for="">Powered By ALLER TECHNOLOGIES</label>    
+    </footer>
 </html>
