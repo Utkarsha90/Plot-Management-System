@@ -1,0 +1,101 @@
+<?php
+		    session_start();  
+        include('connection.php');  
+        include('functionlibrary.php');  
+        checksessionvalidity("0");        
+			?>
+
+<!DOCTYPE html>
+<html>
+  <h1 style="background-color: skyblue;color: white;">Getting Started</h1>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 35px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  font-size: 25px;
+  background-color: #dcdde6;
+}
+</style>
+</head>
+<body>
+
+<button type="button" class="collapsible">=>Member Management</button>
+<div class="content">
+  <p>Members - Used to Search, Manage buyer actions, create, modify , delete, reserve and select plots, pay registration amount and view payments.
+<br>= Workflow - Add member -> Pay Reg Amt -> Select/Reserve Plot > Pay EMI or Part Payment
+<br>= Search the members using name, phone, city and choose the action on the right side to perform.
+<br>= Edit link is used to edit the member details , except mobile no
+<br>= Del link is used to delete the member from the database
+<br>= RAmtPaylink is used to pay current member registration amount
+<br>= RESPlot link is used to reserve a plot for one week for current member
+<br>= SelPlot link is used to finalize and buy a plot for the selected member
+<br>= Pymts link is used to pay emi, part payment and view your payments for current member
+  </p>
+</div>
+<button type="button" class="collapsible">=>Project Management</button>
+<div class="content">
+<p>Projects - Used to Search,Manage project actions, create, modify , delete, create plots, delete plots, view reserved plots and combinations
+<br>= Workflow - Add Project -> Add plots -> Update Plots with imp information > buyers choose plots.
+<br>= Search the projects using name, city, desc, lead and choose the action on the right side to perform.
+<br>= Edit link is used to edit the project details , except projectid
+<br>= Del link is used to delete the project from the database
+<br>= Add link is used to add new plots to the selected project
+<br>= View link is used to view the plots available for the current project  </p>
+</div>
+<button type="button" class="collapsible">=>Enquiry Management</button>
+<div class="content">
+  <p>Inquiry - Used to Search,Manage buyer queries, create, modify , delete, send quotations, add dates to call back and more combinations..
+  <br>= Search the enquiry using proj, name, and choose the action on the right side to perform.
+  <br>= Front office who are calling potential buyers can also add their name, to track daily targets
+<br>= Edit link is used to edit the enquiry details.
+<br>= Del link is used to delete the enquiry from the database  </p>
+</div>
+<button type="button" class="collapsible">=>Reports for search and View</button>
+<div class="content">    
+  <p>Reports - Used to Search,view various kinds of member, project, enquiry and plot reports..
+  <br>= select the appropriate reports for viewing payments, reserving plot, viewing the plots
+</div>
+<button type="button" class="collapsible">=>Image Gallery of photos, Videos</button>
+<div class="content">
+  <p>Gallery - Used to View project images, videos, approval records and other project updates.</p>
+</div>
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
