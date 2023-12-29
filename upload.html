@@ -1,0 +1,227 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title> Multiple Image Upload using PHP and Ajax </title>  
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+  <link rel="stylesheet" href="uploadstyle.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>  
+  
+  <style type="text/css">  
+    input[type=file]{  
+      display: inline;  
+    }  
+    #image_preview{  
+      border: 1px solid black;  
+      padding: 10px;  
+    }  
+    #image_preview:hover img{
+      -ms-transform: scale(7.5); /* IE 9 */
+  -webkit-transform: scale(7.5); /* Safari 3-8 */
+  transform: scale(7.5);
+    }
+    #image_preview1{  
+      border: 1px solid black;  
+      padding: 10px;  
+    }  
+    #image_preview2{  
+      border: 1px solid black;  
+      padding: 10px;  
+    } 
+    #image_preview3{  
+      border: 1px solid black;  
+      padding: 10px;  
+    } 
+    #image_preview img{  
+      width: 50px;  
+      padding: 4px;  
+    }  
+    #image_preview1 img{  
+      width: 50px;  
+      padding: 4px;  
+    } 
+    #image_preview2 img{  
+      width: 50px;  
+      padding: 4px;  
+    } 
+    #image_preview3 img{  
+      width: 50px;  
+      padding: 4px;  
+    } 
+  </style>  
+  
+</head>  
+<body>  
+  <div class="content">
+  <div class="container">
+    <div class="col-sm-4">
+      <form action="logo_banner.php" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <div>
+                  <h3 style="color:white;">Logo and Banner</h3>
+                  <hr style="color:white;">
+                </div>
+                <div>
+               <label for="images" style="color:white;">Choose 1 company logo image</label>
+                  <input type="file" id="image1" name="imageFile[]" required multiple >
+                </div>
+                <br><label for="images" style="color:white;">Choose 1 header for company</label>
+                  <input type="file" id="image3" name="imageFile[]" required multiple >
+              </div>
+              
+         <br>
+         <br>
+         <br>
+          <div id="image_preview1"></div><br>
+<div id="image_preview3"></div>
+<b>Note:All the images will be uploaded into the folder with project name</b>
+           <div>
+            
+              
+                   <br><input type="submit" name="uploadlogoBtn" id="uploadlogoBtn" value="Upload" style="background-color:green; color:white; width: 100px;height: 40px;" >
+           </div>
+ </form>
+    </div>
+    <div class="col-sm-4">
+    <form action="uploadFile.php" method="post" enctype="multipart/form-data">
+      <div>
+        <h3 style="color:white;">Project Images & Videos</h3>
+        <hr style="color:white;">
+      </div>
+                   <div class="form-group">
+                        <label for="project" style="margin-right: 22%; color:white;">Enter Project Name:</label>
+                       <input type="text" name="createfolder" required style="margin-right: 23%;">
+                    </div>
+                   <div class="form-group">
+                    <label for="images" style="color:white;">Choose multiple Images for the project:</label>
+                       <input type="file" id="image" name="imageFile[]" required multiple >
+                   </div>
+               <div >
+                <label for="images" style="color:white;">Choose multiple Videos for the project:</label>
+                <input type="file" name="video" multiple>
+               </div>
+              <br>
+               <div id="image_preview"></div>
+<b>Note:All the images will be uploaded into the folder with project name</b>
+                <div>
+                  
+                   
+                        <br><input type="submit" name="uploadImageBtn" id="uploadImageBtn" value="Upload" style="background-color:green; color:white;width: 100px;height: 40px;" >
+                </div>
+              </form>
+        </div>
+        <div class="col-sm-4">
+          <form action="approved.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+              <div>
+                <h3 style="color:white;">Approved Images & Videos</h3>
+                <hr style="color:white;">
+              </div>
+              <label for="project"style="margin-right: 22%; color:white;">Enter Project Name</label>
+             <input type="text" name="createfolder1" required style="margin-right: 23%;">
+          </div>
+                  <div class="form-group">
+                   <label for="images" style="color:white;">Choose Govt Approved doc img if any</label>
+                      <input type="file" id="image2" name="imageFile[]" required multiple >
+                  </div>
+              <div >
+               <label for="videos"style="color:white;"">Choose Govt approved Videos</label>
+               <input type="file" name="video" multiple>
+              </div>
+             <br>
+              <div id="image_preview2"></div>
+    <b>Note:All the images will be uploaded into the folder with project name</b>
+               <div>
+                  
+                       <br><input type="submit" name="uploadapprovedBtn" id="uploadapprovedBtn" value="Upload" style="background-color:green; color:white;width: 100px;height: 40px;" >
+               </div>
+     </form>
+        </div>
+      </div>
+      
+</div>
+</body>  
+  
+<script type="text/javascript">  
+    
+  $("#image1").change(function(){  
+     $('#image_preview1').html("");  
+     var total_file=document.getElementById("image1").files.length;  
+  
+     for(var i=0;i<total_file;i++)  
+     {  
+      $('#image_preview1').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");  
+     }  
+  
+  });  
+  
+  $('form').ajaxForm(function()   
+   {  
+    alert("Successful Uploading");  
+   });   
+  
+</script>  
+
+<script type="text/javascript">  
+    
+  $("#image3").change(function(){  
+     $('#image_preview3').html("");  
+     var total_file=document.getElementById("image3").files.length;  
+  
+     for(var i=0;i<total_file;i++)  
+     {  
+      $('#image_preview3').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");  
+     }  
+  
+  });  
+  
+  $('form').ajaxForm(function()   
+   {  
+    alert("Successful Uploading");  
+   });   
+  
+</script>  
+
+
+
+<script type="text/javascript">  
+    
+  $("#image").change(function(){  
+     $('#image_preview').html("");  
+     var total_file=document.getElementById("image").files.length;  
+  
+     for(var i=0;i<total_file;i++)  
+     {  
+      $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");  
+     }  
+  
+  });  
+  
+  $('form').ajaxForm(function()   
+   {  
+    alert("Successful Uploading");  
+   });   
+  
+</script>  
+
+
+<script type="text/javascript">  
+    
+  $("#image2").change(function(){  
+     $('#image_preview2').html("");  
+     var total_file=document.getElementById("image2").files.length;  
+  
+     for(var i=0;i<total_file;i++)  
+     {  
+      $('#image_preview2').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");  
+     }  
+  
+  });  
+  
+  $('form').ajaxForm(function()   
+   {  
+    alert("Successful Uploading");  
+   });   
+  
+</script>  
+</html>  
